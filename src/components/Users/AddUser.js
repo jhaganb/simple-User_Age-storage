@@ -11,7 +11,11 @@ const AddUser = (props) => {
   const addUserhandler = (event) => {
     event.preventDefault();
     if (enteredUserName.trim().length === 0 || enteredAge.trim().length === 0) {
-      return; 
+      return;
+    }
+
+    if (+enteredAge < 1) {
+      return;
     }
     console.log(enteredUserName, enteredAge);
     setEnteredUserName("");
